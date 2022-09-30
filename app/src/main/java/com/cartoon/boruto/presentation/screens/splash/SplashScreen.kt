@@ -1,9 +1,6 @@
 package com.cartoon.boruto.presentation.screens.splash
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import android.window.SplashScreen
-import android.window.SplashScreenView
-import androidx.compose.animation.animateContentSize
 import  androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -24,7 +21,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.cartoon.boruto.R
-import com.cartoon.boruto.navigation.Screen
 import com.cartoon.boruto.ui.theme.Purple500
 import com.cartoon.boruto.ui.theme.Purple700
 
