@@ -18,10 +18,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.paging.PagingState
 import com.cartoon.boruto.R
 import com.cartoon.boruto.domain.model.OnBoardingPage
+import com.cartoon.boruto.navigation.Screen
+import com.cartoon.boruto.presentation.screens.home.HomeScreen
 import com.cartoon.boruto.ui.theme.*
 import com.cartoon.boruto.utils.Constants.LAST_ON_BOARDING_PAGE
 import com.cartoon.boruto.utils.Constants.ON_BOARDING_PAGE_COUNT
@@ -30,7 +33,9 @@ import org.intellij.lang.annotations.JdkConstants
 
 @ExperimentalPagerApi
 @Composable
-fun WelcomeScreen(navController: NavHostController) {
+fun WelcomeScreen(
+    navController: NavHostController,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
     val pages = listOf(
         OnBoardingPage.First,
         OnBoardingPage.Second,
@@ -61,6 +66,9 @@ fun WelcomeScreen(navController: NavHostController) {
             spacing = PAGING_INDICATOR_SPACING
         )
         FinishButton(modifier = Modifier.weight(1.0f), pagerState = pagerState) {
+            navController.popBackStack()
+            navController.navigate(Screen.Home.route)
+            welcomeViewModel.saveOnBoardingState(completed = true)
         }
     }
 }
