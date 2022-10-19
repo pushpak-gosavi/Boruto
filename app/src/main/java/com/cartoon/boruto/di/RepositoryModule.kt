@@ -6,7 +6,7 @@ import com.cartoon.boruto.data.repository.Repository
 import com.cartoon.boruto.domain.use_cases.UseCases
 import com.cartoon.boruto.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.cartoon.boruto.domain.use_cases.save_onboarding.SaveOnBoardingUseCase
-import com.cartoon.boruto.repository.DataStoreOperations
+import com.cartoon.boruto.domain.repository.DataStoreOperations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

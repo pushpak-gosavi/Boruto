@@ -1,4 +1,4 @@
-package com.cartoon.boruto.repository
+package com.cartoon.boruto.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 
