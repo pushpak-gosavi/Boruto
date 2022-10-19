@@ -7,6 +7,7 @@ import com.cartoon.boruto.domain.use_cases.UseCases
 import com.cartoon.boruto.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.cartoon.boruto.domain.use_cases.save_onboarding.SaveOnBoardingUseCase
 import com.cartoon.boruto.domain.repository.DataStoreOperations
+import com.cartoon.boruto.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,7 +30,8 @@ object RepositoryModule {
     fun provideUseCases (repository: Repository): UseCases {
         return UseCases(
             saveOnBoardingUseCase = SaveOnBoardingUseCase(repository),
-            readOnBoardingUseCase = ReadOnBoardingUseCase(repository)
+            readOnBoardingUseCase = ReadOnBoardingUseCase(repository),
+            getAllHeroesUseCase = GetAllHeroesUseCase(repository)
         )
     }
 }
